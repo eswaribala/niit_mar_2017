@@ -74,6 +74,7 @@ serviceModule.service('AlbumsService',['$http',function($http)
             url: 'http://jsonplaceholder.typicode.com/albums'
         }).then(function (response)
         {
+            //console.log(response);
             return response;
         });
     }
@@ -106,3 +107,37 @@ serviceModule.service('PostsService',['$http',function($http)
     }
 
 }]);
+
+
+serviceModule.provider('source',function()
+{
+    var Logo='';
+    var Banner='';
+    this.setLogo=function(newLogo)
+    {
+        Logo=newLogo;
+    }
+    this.setBanner=function(newBanner)
+    {
+        Banner=newBanner;
+    }
+    this.$get=function()
+    {
+        return{
+            logo:Logo,
+            banner:Banner
+
+        }
+    }
+
+});
+
+//Register the provider
+serviceModule.config(function(sourceProvider)
+{
+ sourceProvider.setLogo('images/logo.png');
+ sourceProvider.setBanner('images/banner.jpg');
+
+});
+
+

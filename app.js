@@ -3,6 +3,17 @@
  */
 var mainModule=angular.module('MainModule',['FactoryModule']);
 
+mainModule.directive('niitLogo',['source',function(source)
+{
+    return{
+        restrict:'E',
+        template: '<img src=' + source.logo + ' width=100 height=100 />'
+
+    }
+}
+]);
+
+
 mainModule.value('Options',['Users','Comments','Albums','Posts']);
 
 mainModule.controller('MainCtrl',['$scope','Options','DashBoardFactory',
@@ -22,21 +33,7 @@ mainModule.controller('MainCtrl',['$scope','Options','DashBoardFactory',
             res().then(function(output)
             {
                 console.log(output);
-                 switch($scope.selectedValue)
-                 {
-                     case 'Users':
-                         $scope.usersResult=output.data;
-                         break;
-                     case 'Comments':
-                         $scope.commentsResult=output.data;
-                         break;
-                     case 'Albums':
-                         $scope.albumsResult=output.data;
-                         break;
-                     case 'Posts':
-                         $scope.postsResult=output.data;
-                         break;
-                 }
+                $scope[$scope.selectedValue]=output.data;
 
             });
 
