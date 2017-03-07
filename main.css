@@ -1,0 +1,52 @@
+section#dashboard
+{
+    width:80%;
+    height:600px;
+    margin-left: 10%;
+    margin-top: 5%;
+    border: 2px solid red;
+}
+article#users
+{
+    width:40%;
+    height:150px;
+    overflow: scroll;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 2px solid pink;
+    float:left;
+}
+article#comments
+{
+    width:40%;
+    height:150px;
+    overflow: scroll;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 2px solid pink;
+    float:left;
+}
+article#albums
+{
+    width:40%;
+    height:150px;
+    overflow: scroll;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 2px solid pink;
+    float:left;
+}
+article#posts
+{
+    width:40%;
+    height:150px;
+    overflow: scroll;
+    margin-left: 5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 2px solid pink;
+    float:left;
+}

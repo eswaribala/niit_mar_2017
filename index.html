@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="scripts/angular.js"></script>
+    <script type="text/javascript" src="lib/ServiceList.js"></script>
+    <script type="text/javascript" src="lib/factoryDemo.js"></script>
+    <script type="text/javascript" src="lib/app.js"></script>
+</head>
+<body ng-app="MainModule">
+  <section ng-controller="MainCtrl">
+   <select ng-model="selectedValue" selected ng-change="callBack()"
+           ng-options=" option for option in ddOptions">
+
+   </select>
+   <section id="dashboard">
+       <article id="users">
+
+       </article>
+       <article id="comments">
+
+       </article>
+       <article id="posts">
+
+       </article>
+       <article id="albums">
+
+       </article>
+   </section>
+
+  </section>
+
+</body>
+</html>
