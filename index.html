@@ -11,22 +11,89 @@
 </head>
 <body ng-app="MainModule">
   <section ng-controller="MainCtrl">
+   <section id="menu">
    <select ng-model="selectedValue" selected ng-change="callBack()"
            ng-options=" option for option in ddOptions">
 
    </select>
-   <section id="dashboard">
-       <article id="users">
+   </section>
+      <section id="dashboard">
+       <article id="users" >
+           <table>
+               <tr>
+                   <td ng-repeat="(key,value) in usersResult[0]">
+                       {{key}}
+                   </td>
+               </tr>
+               <tr ng-repeat="obj in usersResult">
+                  <td>
+                      {{obj.id}}
+                  </td>
+                   <td>
+                       {{obj.name}}
+                   </td>
+                   <td>
+                       {{obj.email}}
+                   </td>
+               </tr>
+           </table>
 
        </article>
        <article id="comments">
-
+           <table>
+               <tr>
+                   <td ng-repeat="(key,value) in commentsResult[0]">
+                       {{key}}
+                   </td>
+               </tr>
+               <tr ng-repeat="obj in commentsResult">
+                   <td>
+                       {{obj.id}}
+                   </td>
+                   <td>
+                       {{obj.name}}
+                   </td>
+                   <td>
+                       {{obj.body}}
+                   </td>
+               </tr>
+           </table>
        </article>
        <article id="posts">
+           <table>
+               <tr>
+                   <td ng-repeat="(key,value) in postsResult[0]">
+                       {{key}}
+                   </td>
+               </tr>
+               <tr ng-repeat="obj in postsResult">
+                   <td>
+                       {{obj.title}}
+                   </td>
+                   <td>
+                       {{obj.body}}
+                   </td>
 
+               </tr>
+           </table>
        </article>
        <article id="albums">
+           <table>
+               <tr>
+                   <td ng-repeat="(key,value) in albumsResult[0]">
+                       {{key}}
+                   </td>
+               </tr>
+               <tr ng-repeat="obj in albumsResult">
+                   <td>
+                       {{obj.userId}}
+                   </td>
+                   <td>
+                       {{obj.title}}
+                   </td>
 
+               </tr>
+           </table>
        </article>
    </section>
 
